@@ -1,0 +1,16 @@
+@{
+  ViewData["Title"] = "Destinations";
+}
+
+<h1>View All Destinations!</h1>
+
+<h3>Actions:</h3>
+
+<p>@Html.ActionLink("Add a new destination", "Create")</p>
+
+<ol>
+  @foreach (Destination destination in Model)
+  {
+    <li><strong>@destination.City</strong> in @destination.Country | <a href="/Destinations/Details/@(destination.DestinationId)">View Details</a></li>
+  }
+</ol>
